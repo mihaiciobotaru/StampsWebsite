@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>MaSt (Managing Postage Stamps)</title>
+	</head>
+
+	<body
+		prefix="schema: https://schema.org/"
+		prefix="sa:https://ns.science.ai/"
+		itemscope=""
+		itemtype="http://schema.org/WebPage"
+	>
+		<article typeof="schema:ScholarlyArticle">
+			<header>
+				<h1>MaSt (Managing Postage Stamps)</h1>
+			</header>
+			<h2>Table of contents</h2>
+			<ul>
+				<li>
+					<a href="#authors">Authors</a>
+				</li>
+				<li>
+					<a href="#introduction">1. Introduction</a>
+					<ul>
+						<li><a href="#introduction-purpose">1.1 Purpose</a></li>
+						<li>
+							<a href=" #conventions">1.2 Document Conventions</a>
+						</li>
+						<li>
+							<a href="#audience"
+								>1.3 Intended Audience and Reading
+								Suggestions</a
+							>
+						</li>
+						<li><a href="#product-scope">1.4 Product Scope</a></li>
+						<li>
+							<a href="#product-references">1.5 References</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#overall">2. Overall Description</a>
+					<ul>
+						<li>
+							<a href="#product-perspective"
+								>2.1 Product Perspective</a
+							>
+						</li>
+						<li>
+							<a href="#product-functions"
+								>2.2 Product Functions</a
+							>
+						</li>
+						<li>
+							<a href="#users"
+								>2.3 User Classes and Characteristics</a
+							>
+						</li>
+						<li>
+							<a href="#operating-environment"
+								>2.4 Operating Environment</a
+							>
+						</li>
+						<li>
+							<a href="#constraints"
+								>2.5 Design and Implementation Constraints</a
+							>
+						</li>
+						<li>
+							<a href="#documentantion">2.6 User Documentation</a>
+						</li>
+						<li>
+							<a href="#dependencies"
+								>2.7 Assumptions and Dependencies</a
+							>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#external">3. External Interface Requirements</a>
+					<ul>
+						<li>
+							<a href="#user-interface">3.1 User Interfaces</a>
+							<ul>
+								<li>
+									<a href="#user-interface-1"
+										>3.1.1 Home Interface</a
+									>
+								</li>
+								<li>
+									<a href="#user-interface-2"
+										>3.1.2 Login Intreface</a
+									>
+								</li>
+								<li>
+									<a href="#user-interface-3"
+										>3.1.3 Register Interface</a
+									>
+								</li>
+								<li>
+									<a href="#user-interface-4"
+										>3.1.4 Contact Interface</a
+									>
+								</li>
+								<li>
+									<a href="#user-interface-5"
+										>3.1.5 Problem list Interface (for
+										primary school)</a
+									>
+								</li>
+								<li>
+									<a href="#user-interface-6"
+										>3.1.6 Problem list Interface (for other
+										categories)</a
+									>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#hardware-interface"
+								>3.2 Hardware Interfaces</a
+							>
+						</li>
+						<li>
+							<a href="#software-interface"
+								>3.3 Software Interfaces</a
+							>
+						</li>
+						<li>
+							<a href="#communications-interface"
+								>3.4 Communications Interfaces</a
+							>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#system-features">4. System Features</a>
+					<ul>
+						<li>
+							<a href="#system-features-1"
+								>System Feature 1: Solving Math Problems</a
+							>
+						</li>
+						<li>
+							<a href="#system-features-2"
+								>System Feature 2: Participation in the Top</a
+							>
+						</li>
+						<li>
+							<a href="#system-features-3"
+								>System Feature 3: Giving Hints</a
+							>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#non-functional"
+						>5. Other Nonfunctional Requirements</a
+					>
+					<ul>
+						<li>
+							<a href="#performance"
+								>5.1 Performance Requirements</a
+							>
+						</li>
+						<li><a href="#safety">5.2 Safety Requirements</a></li>
+						<li>
+							<a href="#security">5.3 Security Requirements</a>
+						</li>
+						<li>
+							<a href="#software"
+								>5.4 Software Quality Attributes</a
+							>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#other-requirements">Other Requirements</a>
+					<ul>
+						<li>
+							<a href="#formalization"
+								>1. Formalization of input data</a
+							>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<section id="authors" typeof="sa:AuthorsList">
+				<div role="contentinfo">
+					<h2>Authors</h2>
+					<ul>
+						<li
+							typeof="sa:ContribuitorRole"
+							property="schema:author"
+						>
+							<span typeof="sa:Person">
+								<meta
+									property="schema:givenName"
+									content="Mihai"
+								/>
+								<meta
+									property="schema:familyName"
+									content="Ciobotaru"
+								/>
+								<span property="schema:name">
+									Mihai Ciobotaru
+								</span>
+							</span>
+							<ul>
+								<li
+									property="schema:roleContactPoint"
+									typeof="schema:ContactPoint"
+								>
+									<a
+										href="mailTo:mihai2096@gmail.com"
+										property="schema:email"
+										>mihai2096@gmail.com</a
+									>
+								</li>
+							</ul>
+						</li>
+
+						<li
+							typeof="sa:ContribuitorRole"
+							property="schema:author"
+						>
+							<span typeof="sa:Person">
+								<meta
+									property="schema:givenName"
+									content="Radu"
+								/>
+								<meta
+									property="schema:familyName"
+									content="Chelaru"
+								/>
+								<span property="schema:name">
+									Radu Chelaru
+								</span>
+							</span>
+							<ul>
+								<li
+									property="schema:roleContactPoint"
+									typeof="schema:ContactPoint"
+								>
+									<a
+										href="mailTo:raduchelaru1@gmail.com"
+										property="schema:email"
+										>raduchelaru1@gmail.com</a
+									>
+								</li>
+							</ul>
+						</li>
+
+						<li
+							typeof="sa:ContribuitorRole"
+							property="schema:author"
+						>
+							<span typeof="sa:Person">
+								<meta
+									property="schema:givenName"
+									content="Vlad"
+								/>
+								<meta
+									property="schema:familyName"
+									content="Grigorita"
+								/>
+								<span property="schema:name">
+									Cristian Dobrovici
+								</span>
+							</span>
+							<ul>
+								<li
+									property="schema:roleContactPoint"
+									typeof="schema:ContactPoint"
+								>
+									<a
+										href="mailTo:vladgrigorita@yahoo.com"
+										property="schema:email"
+										>vladgrigorita@yahoo.com</a
+									>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<section typeof="sa:Abstract">
+				<div role="document">
+					<h2 id="introduction">1. Introduction</h2>
+					<h3 id="introduction-purpose">1.1 Purpose</h3>
+					<p>
+						The current version number for this product is 1.0
+						(first version). The product is intended for people that
+						share the passion of filatelic products.
+					</p>
+
+					<h3 id="conventions">1.2 Document Conventions</h3>
+					<ul>
+						<li>
+							The document is based on the template
+							<cite typeof="citation">
+								<a
+									href="https://github.com/rick4470/IEEE-SRS-Tempate"
+								>
+									IEEE System Requirements Specification
+									Template
+								</a> </cite
+							>.
+						</li>
+						<li>
+							Sequences of references are specified in italics.
+						</li>
+					</ul>
+
+					<h3 id="audience">
+						1.3 Intended Audience and Reading Suggestions
+					</h3>
+					<p>
+						The document is intended for users that would like to be
+						a part of the Stamps World. We suggest reading the
+						document for users in the current format, starting with
+						the introduction.
+					</p>
+
+					<h3 id="product-scope">1.4 Product Scope</h3>
+					<p>
+						The aim for the user is to search, create, add or share
+						albums of filatelic products and to receive statistics
+						and generated data about ranks and tops about the data
+						and about other users.
+					</p>
+
+					<h3 id="product-references" typeof="sa:ReferenceList">
+						1.5 References
+					</h3>
+					<ul>
+						<li
+							class="ref-something"
+							typeof="schema:ScholarlyArticle"
+							resource="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-projects.html"
+						>
+							<span
+								property="schema:author"
+								typeof="schema:Person"
+							>
+								<span property="schema:familyName">Buraga</span>
+								<span property="schema:givenName">Sabin</span>.
+								<span property="schema:additionalName"
+									>Corneliu</span
+								>
+							</span>
+							<cite property="schema:name"
+								>Site Tehnologii Web.</cite
+							>
+							<span
+								property="schema:isPartOf"
+								typeof="schema:PublicationVolume"
+							>
+								<span
+									property="schema:isPartOf"
+									typeof="schema:Periodical"
+								>
+									<span property="schema:name"
+										>FII UAIC.</span
+									>
+								</span>
+							</span>
+						</li>
+					</ul>
+
+					<ul>
+						<li
+							class="ref-something"
+							typeof="schema:ScholarlyArticle"
+							resource="https://github.com/rick4470/IEEE-SRS-Tempate"
+						>
+							<span
+								property="schema:author"
+								typeof="schema:Person"
+							>
+								<span property="schema:familyName">H</span>
+								<span property="schema:givenName">Rick</span>.
+							</span>
+							<cite property="schema:name">IEEE-Template.</cite>
+							<span
+								property="schema:isPartOf"
+								typeof="schema:Periodical"
+							>
+								<span property="schema:name">GitHub</span>
+							</span>
+						</li>
+					</ul>
+
+					<ul>
+						<li
+							class="ref-something"
+							typeof="schema:ScholarlyArticle"
+							resource="https://w3c.github.io/scholarly-html/"
+						>
+							<cite property="schema:name">Scholarly HTML</cite>
+							<span
+								property="schema:isPartOf"
+								typeof="schema:Periodical"
+							>
+								<span property="schema:name"
+									>w3c.gihtub.io</span
+								>
+							</span>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<section typeof="sa:MaterialsAndMethods">
+				<div role="document">
+					<h2 id="overall">2. Overall Description</h2>
+					<h3 id="product-perspective">2.1 Product Perspective</h3>
+					<p>
+						This product is presented as a new product, autonomous,
+						but still similar to sites that share the same field. It
+						shares the same ideas with many other sites such as
+						Stamp World.
+					</p>
+
+					<h3 id="product-functions">2.2 Product Functions</h3>
+					<ul>
+						<li>Inserts new stamp</li>
+						<li>Creates catalogues</li>
+						<li>Searches for advanced queries from database</li>
+						<li>Imports/Exports Data</li>
+						<li>Creates ranks and exports them as RSS data flow</li>
+						<li>
+							Creates Statistics and exports them in JPEG and PNG
+							format
+						</li>
+					</ul>
+
+					<h3 id="users">2.3 Uses Classes and Characteristics</h3>
+					<p>
+						We believe that the class of users who will use this
+						application will be mainly composed of collectors of
+						filatelic products. They can use our app to transfer
+						their real collection of stamps into a virtual one and
+						share it with other people.
+					</p>
+
+					<h3 id="operating-environment">
+						2.4 Operating Environment
+					</h3>
+					<p>
+						For optimal use of the application, version 1.0, we
+						recommend using Chrome or Mozilla Firefox browser (other
+						browsers may not display properly). Also, there is no
+						need for top hardware specifications - due to the
+						simplicity of the application, we believe that it can
+						run on the vast majority of computers and smartphones.
+					</p>
+
+					<h3 id="constraints">
+						2.5 Design and Implementation Constraints
+					</h3>
+					<p>
+						For the web application interface we used only HTML5,
+						CSS3 and JavaScript. Instead, to create the backend we
+						will mainly use PHP and MySQL.
+					</p>
+
+					<h3 id="documentantion">2.6 User Documentation</h3>
+					<p>
+						In order to correctly run our app the user neeeds to use
+						a browser that has a recent version.
+					</p>
+
+					<h3 id="dependencies">2.7 Assumptions and Dependencies</h3>
+					<p>
+						The only thing in terms of dependencies that our app has
+						is CanvasJS that is a framework which helps with the
+						statistics our app renders.
+					</p>
+				</div>
+			</section>
+
+			<section typeof="sa:MaterialsAndMethods">
+				<div role="document">
+					<h2 id="external">3. External Interface Requirements</h2>
+					<h3 id="user-interface">3.1 User Interface</h3>
+					<p>
+						The components for which a graphical user interface was
+						required are:
+					</p>
+					<ul>
+						<li>Home window</li>
+						<li>Login window</li>
+						<li>Register window</li>
+						<li>
+							Profile window including Statistics, My Stamps, My
+							catalogues
+						</li>
+						<li>Catalogue window</li>
+					</ul>
+					<h4>3.1.1 Home Interface</h4>
+					<p>
+						The image below is the main window, in which the user
+						will enter to authenticate or register. The user has at
+						his disposal a navigation bar, through which he can
+						access the catalogue page. Also, by using the "Login"
+						button, the user will be sent to the page intended for
+						authentication where by using the "register" button, the
+						user will be sent to the page intended for registration
+						in the application. After logging-in the navigation bar
+						wll also show a profile button that will send the user
+						to his own profile.
+					</p>
+					<figure typeof="sa:image" id="user-interface-1">
+						<img
+							src="home-page.png"
+							style="width: 700px; height: 300px"
+							alt="navbar-screenshot"
+							class="screenshots-nav"
+						/>
+						<figcaption>Home Interface</figcaption>
+					</figure>
+
+					<h4>3.1.2 Login Interface</h4>
+					<p>
+						The image below represents the authentication window, in
+						which the user can authenticate in the application. The
+						user must enter their email and password to successfully
+						complete the process. The user also has access to the
+						"Signup now" button, displayed next to the message "Not
+						a member?", which redirects him to the registration
+						window.
+					</p>
+					<figure typeof="sa:image" id="user-interface-2">
+						<img
+							src="login-interface.png"
+							style="width: 700px; height: 300px"
+							alt="navbar-screenshot"
+							class="screenshots-nav"
+						/>
+						<figcaption>Login Interface</figcaption>
+					</figure>
+
+					<h4>3.1.3 Register Interface</h4>
+					<p>
+						The image below represents the registration window,
+						where the user has the possibility to create an account.
+						To create an account, the user must completely and
+						correctly fill in all the fields for this service. The
+						service ends successfully when the user presses the
+						"Register" button.
+					</p>
+					<figure typeof="sa:image" id="user-interface-3">
+						<img
+							src="register-interface.png"
+							style="width: 700px; height: 300px"
+							alt="navbar-screenshot"
+							class="screenshots-nav"
+						/>
+						<figcaption>Register Interface</figcaption>
+					</figure>
+
+					<h4>3.1.4 Profile Interface</h4>
+					<p>
+						The image below is the profile window, in which the user
+						can see his own profile that contains data about his
+						account. The page also has three different interfaces
+						regarding statistics, users collection of stamps and
+						users catalogues. The page also contains the buttons
+						Home, Catalogue and Log out besides the Profile one.
+					</p>
+					<figure typeof="sa:image" id="user-interface-5">
+						<img
+							src="profile-intercace1.png"
+							style="width: 700px; height: 300px"
+							alt="navbar-screenshot"
+							class="screenshots-nav"
+						/>
+						<figcaption>
+							Login interface (for primary school)
+						</figcaption>
+					</figure>
+
+					<h4>3.1.5 Catalogue Interface</h4>
+					<p>
+						The image below contains the catalogue page of our app.
+						Here the user has the option to use our advanced search
+						bar where he can discover any stamp that has ever been
+						posted in our app by searching it's name or by using our
+						filters. The user can also sort the displayed stamps by
+						popularity, price, country etc.
+					</p>
+					<figure typeof="sa:image" id="user-interface-6">
+						<img
+							src="catalogue-interface.png"
+							style="width: 700px; height: 300px"
+							alt="navbar-screenshot"
+							class="screenshots-nav"
+						/>
+						<figcaption>Catalogue interface</figcaption>
+					</figure>
+
+					<h3 id="hardware-interface">3.2 Hardware Interfaces</h3>
+					Devices that can interact with the application include both
+					computers (PCs, laptops, other similar types) and tablets
+					and mobile devices. Because the application has a responsive
+					interface, it can scale information to different screen
+					sizes.
+					<figure typeof="sa:image" id="user-interface-mobile1">
+						<img
+							src="profile-interface-mobile.png"
+							style="width: 300px; height: 600px"
+							alt="navbar-screenshot"
+							class="screenshots-nav"
+						/>
+						<figcaption>Profile Interface (for mobile)</figcaption>
+					</figure>
+
+					<figure typeof="sa:image" id="user-interface-mobile2">
+						<img
+							src="hope-interface-mobile.png"
+							style="width: 300px; height: 600px"
+							alt="navbar-screenshot"
+							class="screenshots-nav"
+						/>
+						<figcaption>Home Interface (for mobile)</figcaption>
+					</figure>
+
+					<h3 id="software-interface">3.3 Software Interfaces</h3>
+					<p>
+						A first software component that establishes a connection
+						with the application is the database. To access the
+						database, the PHP language is used, and to modify the
+						data inside the database, MySQL is used. Also, scripts
+						written in JavaScript language are used to improve the
+						user experience in the application.
+					</p>
+
+					<h3 id="communications-interface">
+						3.4 Communications Interfaces
+					</h3>
+					<p>
+						The application imposes the condition that the user has
+						an internet connection, in order to be able to connect
+						to our app.
+					</p>
+				</div>
+			</section>
+
+			<section typeof="sa:MaterialsAndMethods">
+				<div role="document">
+					<h2 id="system-features">4. System Features</h2>
+					<h3 id="system-features-1">
+						4.1 System Feature 1: Creating Stamps
+					</h3>
+					<p>
+						This feature has a high priority because it is the main
+						feature of the application. In addition to the other
+						features, the main purpose of the application is to
+						allow the user to create new stamps and upload data
+						regarding his collection.
+					</p>
+
+					<h3 id="system-features-2">
+						4.2 System Feature 2: Displaying Statistics and Ranks
+					</h3>
+					<p>
+						This feature has a medium priority, because the
+						statistics helps users to be recognized in the
+						application. Ranking in a place as high as possible in
+						the ranking highlights the user as a top collector in
+						the industry of filatelic products.
+					</p>
+
+					<h3 id="system-features-3">
+						4.3 System Feature 3: Searching stamps in the database
+					</h3>
+					<p>
+						This feature has a medium priority, because, the user
+						can search for any filatelic product by name. Also, the
+						user can choose to filter the results by many categories
+						such as country, year, category, color, etc. He can also
+						sort the displayed data by popularity, price etc.
+					</p>
+				</div>
+			</section>
+
+			<section typeof="sa:MaterialsAndMethods">
+				<div role="document">
+					<h2 id="non-functional">
+						5. Other Nonfunctional Requirements
+					</h2>
+					<h3 id="performance">5.1 Performance Requirements</h3>
+					<p>
+						Currently (version 1.0 of the application), the
+						developers consider that there are no performance
+						requirements, as long as the application runs in a
+						browser specified in the previous points (Chrome/Mozilla
+						Firefox).
+					</p>
+
+					<h3 id="safety">5.2 Safety Requirements</h3>
+					<p>
+						The results of testing the application in the current
+						version (1.0) showed that there are no losses, damages
+						or losses that may occur from the use of the
+						application. However, if a violation of one of the above
+						is observed, it is recommended to isolate and analyze
+						the incident.
+					</p>
+
+					<h3 id="security">5.3 Security Requirements</h3>
+					<p>
+						The database used is MySQL, and each user's data is
+						stored in the database. Each user's password is not
+						stored properly, but is applied to a hash. The final
+						result is stored in the database. Through certain
+						functions that cannot be revealed publicly, each user
+						logs in to his password.
+					</p>
+
+					<h3 id="software">5.4 Software Quality Attributes</h3>
+					<p>
+						The application has as secondary purpose reliability,
+						but also portability on different devices (computer,
+						tablet, phone). This work is done with the help of the
+						responsive interface, but also with the periodic care of
+						the application by the developers. If a significant
+						improvement is needed then a new patch appears, in the
+						form of a version.
+					</p>
+				</div>
+			</section>
+
+			<section typeof="sa:ReferenceList">
+				<div role="document">
+					<h2 id="other-requirements">Other Requirements</h2>
+					<h3 id="formalization">1. Formalization of input data</h3>
+					<p>
+						In order for users' data to be stored correctly in the
+						database, they must have the following formalities:
+					</p>
+					<ul>
+						<li>Email format must be required "name@domain"</li>
+					</ul>
+				</div>
+			</section>
+		</article>
+	</body>
+</html>

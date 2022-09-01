@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	text-decoration: none;
+}
+
+button {
+	background-color: #1d1d8c00;
+	border: 0;
+	margin: 2px;
+}
+
+body {
+	background-color: #51cbbd;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+	text-decoration: none;
+	color: inherit;
+}
+nav {
+	display: flex;
+	height: 80px;
+	width: 100%;
+	background: #0b1b1b;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 50px 0 100px;
+	flex-wrap: wrap;
+}
+nav .logo {
+	color: #fff;
+	font-size: 35px;
+	font-weight: 600;
+}
+nav ul {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+}
+nav ul li {
+	margin: 0 5px;
+}
+nav ul li a {
+	color: #f2f2f2;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 500;
+	padding: 8px 15px;
+	border-radius: 5px;
+	letter-spacing: 1px;
+	transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover {
+	color: #111;
+	background: #fff;
+}
+nav .menu-btn i {
+	color: #fff;
+	font-size: 22px;
+	cursor: pointer;
+	display: none;
+}
+input[type='checkbox'] {
+	display: none;
+}
+
+div.scrollmenu {
+	background-color: #333;
+	overflow: auto;
+	white-space: nowrap;
+}
+
+div.scrollmenu a {
+	display: inline-block;
+	color: white;
+	text-align: center;
+	padding: 14px;
+	text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+	background-color: #777;
+}
+
+.content {
+	text-align: center;
+	width: 75%;
+	margin: auto;
+}
+
+footer {
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: #111;
+	color: #f2f2f2;
+	height: 50px;
+	z-index: -1;
+}
+
+.icon {
+	width: 3rem;
+	margin: 0 10px;
+	height: 3rem;
+	cursor: pointer;
+}
+
+.list-header-container {
+	background-color: #111;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2px 5px;
+}
+
+.list-header {
+	background-color: #111;
+	display: inline-block;
+	color: #f1f1f1;
+	padding: 5px 40px;
+}
+
+.list-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.horizontal-list {
+	display: block;
+	border: 5px solid black;
+	border-radius: 10px;
+	margin: 10px;
+	width: 70vw;
+}
+
+.slider {
+	display: flex;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	margin: 10px 0px;
+	padding: 0px 10px;
+	transform: scroll(calc(var(--i, 0) / var(--n) * -100%));
+	scroll-behavior: smooth;
+}
+
+.slider::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+.slider::-webkit-scrollbar-track {
+	background-color: transparent;
+	border-radius: 10px;
+}
+.slider::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 10px;
+}
+
+.media-scroller {
+	--_spacer: var(--size-3);
+	display: grid;
+	gap: var(--_spacer);
+	grid-auto-flow: column;
+	grid-auto-columns: 21%;
+
+	padding: 0 var(--_spacer) var(--_spacer);
+
+	overflow-x: auto;
+	overscroll-behavior-inline: contain;
+}
+
+.media-scroller--with-groups {
+	grid-auto-columns: 80%;
+}
+
+.media-group {
+	display: grid;
+	gap: var(--_spacer);
+	grid-auto-flow: column;
+}
+
+.media-element {
+	display: grid;
+	grid-template-rows: min-content;
+	gap: var(--_spacer);
+	padding: var(--_spacer);
+	background: var(--surface-2);
+	border-radius: var(--radius-2);
+	box-shadow: var(--shadow-2);
+}
+
+.media-element > img {
+	inline-size: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+}
+
+.snaps-inline {
+	scroll-snap-type: inline mandatory;
+	scroll-padding-inline: var(--_spacer, 1rem);
+}
+
+.snaps-inline > * {
+	scroll-snap-align: start;
+}
+
+.home-button {
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	text-align: center;
+	color: #ffffff;
+	background-color: #1b1b1b;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 500;
+	padding: 8px 15px;
+	border-radius: 5px;
+	letter-spacing: 1px;
+	transition: all 0.3s ease;
+}
+
+.home-button:hover {
+	color: red;
+}
+
+@media only screen and (max-width: 1000px) {
+	nav {
+		padding: 0 40px 0 50px;
+	}
+}
+@media only screen and (max-width: 1100px) {
+	.content {
+		width: 100%;
+	}
+
+	nav .menu-btn i {
+		display: block;
+	}
+	#click:checked ~ .menu-btn i:before {
+		content: '\f00d';
+	}
+	nav ul {
+		overflow: hidden;
+		z-index: 10;
+		position: fixed;
+		top: 80px;
+		left: -100%;
+		background: #111;
+		height: 100vh;
+		width: 100%;
+		text-align: center;
+		display: block;
+		transition: all 0.3s ease;
+	}
+	#click:checked ~ ul {
+		left: 0;
+	}
+	nav ul li {
+		width: 100%;
+		margin: 40px 0;
+	}
+	nav ul li a {
+		width: 100%;
+		margin-left: -100%;
+		display: block;
+		font-size: 20px;
+		transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+	#click:checked ~ ul li a {
+		margin-left: 0px;
+	}
+	nav ul li a.active,
+	nav ul li a:hover {
+		background: none;
+		color: cyan;
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	footer {
+		font-size: 12px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	footer {
+		font-size: 10px;
+	}
+}
